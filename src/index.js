@@ -62,13 +62,16 @@ class DropdownTreeSelect extends Component {
   componentWillMount () {
     const tree = this.createList(this.props.data)
     const tags = this.treeManager.getTags()
-    this.setState({tree, tags})
+    const data = this.props.data
+    this.setState({tree, tags, data})
   }
 
   componentWillReceiveProps (nextProps) {
-    const tree = this.createList(nextProps.data)
-    const tags = this.treeManager.getTags()
-    this.setState({tree, tags})
+    if (this.props.data != this.state.data) {
+      const tree = this.createList(nextProps.data)
+      const tags = this.treeManager.getTags()
+      this.setState({tree, tags})
+    }
   }
 
   onDrowdownHide () {
