@@ -10,7 +10,7 @@
     "build": "rimraf dist/**/* && webpack --config webpack.config.js --bail",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "demo": "webpack-dev-server --config docs/webpack.config.js",
-    "prepublishOnly": "npm run build && echo Prepublish",
+    "prepublish": "npm run build && echo Prepublish",
     "lint": "eslint --fix src docs webpack.config.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "cross-env NODE_ENV=test ava",
