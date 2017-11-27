@@ -67,7 +67,7 @@ class DropdownTreeSelect extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (this.props.data != this.state.data) {
+    if (this.props.data !== this.state.data) {
       const tree = this.createList(nextProps.data)
       const tags = this.treeManager.getTags()
       this.setState({tree, tags})
